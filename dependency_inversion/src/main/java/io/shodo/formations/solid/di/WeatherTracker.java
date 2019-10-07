@@ -1,8 +1,6 @@
 package io.shodo.formations.solid.di;
 
-/**
- * Created by mrk on 4/8/14.
- */
+
 public class WeatherTracker {
     String currentConditions;
     Phone phone;

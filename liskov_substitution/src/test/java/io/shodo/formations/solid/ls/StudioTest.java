@@ -4,9 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by mrk on 4/8/14.
- */
+
 public class StudioTest {
     @Test
     public void testInitializedWithZeroBedrooms() {
