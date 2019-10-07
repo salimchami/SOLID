@@ -5,7 +5,8 @@ package io.shodo.formations.solid.di;
  */
 public class EmailClient implements Notifier {
     public void alertWeatherConditions(String weatherConditions) {
-        if (weatherConditions == "sunny");
+        if ("sunny".equals(weatherConditions)) {
             System.out.print("It is sunny");
+        }
     }
 }

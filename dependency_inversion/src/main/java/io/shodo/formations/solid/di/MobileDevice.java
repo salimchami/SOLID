@@ -5,7 +5,8 @@ package io.shodo.formations.solid.di;
  */
 public class MobileDevice implements Notifier {
     public void alertWeatherConditions(String weatherConditions) {
-        if (weatherConditions == "rainy")
+        if ("rainy".equals(weatherConditions)) {
             System.out.print("It is rainy");
+        }
     }
 }

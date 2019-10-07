@@ -1,9 +1,7 @@
 package io.shodo.formations.solid.oc;
 
-/**
- * Created by mrk on 4/7/14.
- */
 public class Greeter {
+
     private Personality personality;
 
     public Greeter(Personality personality) {
