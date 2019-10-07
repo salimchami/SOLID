@@ -3,7 +3,6 @@ package io.shodo.formations.solid.is;
 /**
  * Created by mrk on 4/7/14.
  */
-public interface Bird {
-    public void fly();
-    public void molt();
+public interface SwimmingCreature {
+    public void swim();
 }

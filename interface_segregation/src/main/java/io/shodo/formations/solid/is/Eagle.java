@@ -3,12 +3,12 @@ package io.shodo.formations.solid.is;
 /**
  * Created by mrk on 4/7/14.
  */
-public class Eagle implements Bird {
+public class Eagle implements FlyingCreature, FeatheredCreature {
     String currentLocation;
     int numberOfFeathers;
 
-    public Eagle(int initialFeatherCount) {
-        this.numberOfFeathers = initialFeatherCount;
+    public Eagle(int initialNumberOfFeathers) {
+        this.numberOfFeathers = initialNumberOfFeathers;
     }
 
     public void fly() {

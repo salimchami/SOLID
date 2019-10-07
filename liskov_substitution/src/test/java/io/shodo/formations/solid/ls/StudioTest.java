@@ -11,13 +11,14 @@ public class StudioTest {
     @Test
     public void testInitializedWithZeroBedrooms() {
         Studio studio = new Studio();
-        assertEquals(0, studio.numberOfBedrooms);
+        assertEquals(0, studio.numberOfRooms);
     }
 
     @Test
-    public void testSetSquareFootage() {
+    public void testSetsSquareFootage() {
         Studio studio = new Studio();
-        studio.setSquareFootage(600);
-        assertEquals(600, studio.squareFootage);
+        studio.setSquareFootage(550);
+
+        assertEquals(550, studio.squareFootage);
     }
 }

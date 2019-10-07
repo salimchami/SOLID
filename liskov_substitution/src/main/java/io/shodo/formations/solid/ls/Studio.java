@@ -3,9 +3,12 @@ package io.shodo.formations.solid.ls;
 /**
  * Created by mrk on 4/8/14.
  */
-public class Studio extends Apartment {
+public class Studio {
+    int squareFootage;
+    int numberOfRooms;
+
     public Studio() {
-        this.numberOfBedrooms = 0;
+        this.numberOfRooms = 0;
     }
 
     public void setSquareFootage(int sqft) {

@@ -17,7 +17,8 @@ public class PenthouseSuiteTest {
     @Test
     public void testSetsSquareFootage() {
         PenthouseSuite penthouse = new PenthouseSuite();
-        penthouse.setSquareFootage(1500);
-        assertEquals(1500, penthouse.squareFootage);
+        penthouse.setSquareFootage(1600);
+
+        assertEquals(1600, penthouse.squareFootage);
     }
 }

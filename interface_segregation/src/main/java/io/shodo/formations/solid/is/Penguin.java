@@ -3,7 +3,7 @@ package io.shodo.formations.solid.is;
 /**
  * Created by mrk on 4/7/14.
  */
-public class Penguin implements Bird {
+public class Penguin implements SwimmingCreature, FeatheredCreature {
     String currentLocation;
     int numberOfFeathers;
 
@@ -11,15 +11,11 @@ public class Penguin implements Bird {
         this.numberOfFeathers = initialFeatherCount;
     }
 
-    public void molt() {
-        this.numberOfFeathers -= 1;
-    }
-
-    public void fly() {
-        throw new UnsupportedOperationException();
-    }
-
     public void swim() {
         this.currentLocation = "in the water";
+    }
+
+    public void molt() {
+        this.numberOfFeathers -= 4;
     }
 }

@@ -10,32 +10,31 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by mrk on 4/8/14.
  */
+class MockNotifier implements Notifier {
+    public void alertWeatherConditions(String weatherDescription) {
+        System.out.print("foo");
+    }
+}
+
 public class WeatherTrackerTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Test
-    public void testReturnsCurrentWeather() {
+    public void testSetsCurrentWeatherConditions() {
         WeatherTracker tracker = new WeatherTracker();
-        tracker.setCurrentConditions("rainy");
+        tracker.setCurrentConditions("cloudy");
 
-        assertEquals("rainy", tracker.currentConditions);
+        assertEquals("cloudy", tracker.currentConditions);
     }
 
     @Test
-    public void testAlertsPhoneUsersWhenRaining() {
+    public void testNotifiesWhenWeatherChanges() {
         WeatherTracker tracker = new WeatherTracker();
         System.setOut(new PrintStream(outContent));
-        tracker.setCurrentConditions("rainy");
+        tracker.setCurrentConditions("cloudy");
+        MockNotifier mockNotifier = new MockNotifier();
+        tracker.notify(mockNotifier);
 
-        assertEquals("It is rainy", outContent.toString());
-    }
-
-    @Test
-    public void testAlertsViaEmailWhenSunny() {
-        WeatherTracker tracker = new WeatherTracker();
-        System.setOut(new PrintStream(outContent));
-        tracker.setCurrentConditions("sunny");
-
-        assertEquals("It is sunny", outContent.toString());
+        assertEquals("foo", outContent.toString());
     }
 }
