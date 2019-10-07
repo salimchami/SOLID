@@ -4,7 +4,7 @@ package io.shodo.formations.solid.sr;
  * Created by mrk on 4/7/14.
  */
 public class BoardPresenter {
-    Board board;
+    private Board board;
 
     public BoardPresenter(Board board) {
         this.board = board;

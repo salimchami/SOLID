@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class FormalPersonalityTest {
     @Test
     public void testGreetsSomeoneFormally() {
-        FormalPersonality fp = new FormalPersonality();
+        Personality fp = new FormalPersonality();
         assertEquals("Good evening, sir.", fp.greet());
     }
 }
