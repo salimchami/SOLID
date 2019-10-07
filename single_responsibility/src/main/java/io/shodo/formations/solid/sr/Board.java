@@ -3,9 +3,6 @@ package io.shodo.formations.solid.sr;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by mrk on 4/7/14.
- */
 public class Board {
     int size;
     ArrayList<String> spots;

@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by mrk on 4/7/14.
- */
 public class BoardShaperTest {
     @Test
     public void testItReturnsRowIndexes() {

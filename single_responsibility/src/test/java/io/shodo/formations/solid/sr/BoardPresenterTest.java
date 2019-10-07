@@ -7,9 +7,6 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by mrk on 4/7/14.
- */
 public class BoardPresenterTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 

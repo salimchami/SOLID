@@ -1,8 +1,5 @@
 package io.shodo.formations.solid.sr;
 
-/**
- * Created by mrk on 4/7/14.
- */
 public class BoardPresenter {
     private Board board;
 
