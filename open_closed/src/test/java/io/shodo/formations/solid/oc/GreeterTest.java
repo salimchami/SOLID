@@ -2,6 +2,7 @@ package io.shodo.formations.solid.oc;
 
 import org.junit.Test;
 
+import static io.shodo.formations.solid.oc.PersonalityType.*;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -10,28 +11,26 @@ import static org.junit.Assert.assertEquals;
 public class GreeterTest {
     @Test
     public void testSaysHello() {
-        Greeter greeter = new Greeter();
-        assertEquals("Hello.", greeter.greet());
+        Personality standardPersonality = new StandardPersonalityFactory().create();
+        assertEquals("Hello.", standardPersonality.greet());
     }
 
     @Test
     public void testSaysHelloFormally() {
-        Greeter greeter = new Greeter();
-        greeter.setFormality("formal");
-        assertEquals("Good evening, sir.", greeter.greet());
+        Personality formalPersonality = new FormalPersonalityFactory().create();
+        assertEquals("Good evening, sir.", formalPersonality.greet());
     }
 
     @Test
     public void testSaysHelloCasually() {
-        Greeter greeter = new Greeter();
-        greeter.setFormality("casual");
-        assertEquals("Sup bro?", greeter.greet());
+        Personality casualPersonality = new CasualPersonalityFactory().create();
+        assertEquals("Sup bro?", casualPersonality.greet());
     }
 
     @Test
     public void testSaysHelloIntimately() {
-        Greeter greeter = new Greeter();
-        greeter.setFormality("intimate");
-        assertEquals("Hello Darling!", greeter.greet());
+        Personality intimatePersonality = new IntimatePersonalityFactory().create();
+        assertEquals("Hello Darling!", intimatePersonality.greet());
     }
+
 }
