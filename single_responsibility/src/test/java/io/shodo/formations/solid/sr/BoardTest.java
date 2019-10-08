@@ -16,13 +16,13 @@ public class BoardTest {
 
     @Test
     public void testBoardHasNineSpots() {
-        Board board = new Board();
-        assertEquals(9, board.spots.size());
+        Board board = new Board(3);
+        assertEquals(9, board.getBoardSize());
     }
 
     @Test
     public void testBoardReturnsFirstRow() {
-        Board board = new Board();
+        Board board = new Board(3);
         ArrayList<String> rowOne = new ArrayList<String>();
         rowOne.add("0");
         rowOne.add("1");
@@ -33,7 +33,7 @@ public class BoardTest {
 
     @Test
     public void testBoardReturnsSecondRow() {
-        Board board = new Board();
+        Board board = new Board(3);
         ArrayList<String> rowTwo = new ArrayList<String>();
         rowTwo.add("3");
         rowTwo.add("4");
@@ -44,7 +44,7 @@ public class BoardTest {
 
     @Test
     public void testBoardReturnsThirdRow() {
-        Board board = new Board();
+        Board board = new Board(3);
         ArrayList<String> rowThree = new ArrayList<String>();
         rowThree.add("6");
         rowThree.add("7");
@@ -55,7 +55,7 @@ public class BoardTest {
 
     @Test
     public void testPrintsBoardToConsole() {
-        Board board = new Board();
+        Board board = new Board(3);
         System.setOut(new PrintStream(outContent));
         board.display();
         assertEquals("0 | 1 | 2\n3 | 4 | 5\n6 | 7 | 8", outContent.toString());

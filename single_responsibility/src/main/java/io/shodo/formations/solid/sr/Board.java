@@ -1,46 +1,45 @@
 package io.shodo.formations.solid.sr;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by mrk on 4/7/14.
  */
 public class Board {
-    ArrayList<String> spots;
+    private final BoardDrawer boardDrawer;
+    private final List<List<String>> spots;
+    private int boardSize;
 
-    public Board() {
-        this.spots = new ArrayList<String>();
-        for (int i = 0; i < 9; i++) {
-            this.spots.add(String.valueOf(i));
-        }
+    public List<List<String>> getSpots() {
+        return spots;
     }
 
-    public ArrayList<String> firstRow() {
-        ArrayList<String> firstRow = new ArrayList<String>();
-        firstRow.add(this.spots.get(0));
-        firstRow.add(this.spots.get(1));
-        firstRow.add(this.spots.get(2));
-        return firstRow;
+    public Board(int boardSize) {
+        this.boardSize = boardSize;
+        this.boardDrawer = new BoardDrawer(boardSize);
+        this.spots = boardDrawer.draw();
     }
 
-    public ArrayList<String> secondRow() {
-        ArrayList<String> secondRow = new ArrayList<String>();
-        secondRow.add(this.spots.get(3));
-        secondRow.add(this.spots.get(4));
-        secondRow.add(this.spots.get(5));
-        return secondRow;
+    public List<String> firstRow() {
+        return spots.get(0);
     }
 
-    public ArrayList<String> thirdRow() {
-        ArrayList<String> thirdRow = new ArrayList<String>();
-        thirdRow.add(this.spots.get(6));
-        thirdRow.add(this.spots.get(7));
-        thirdRow.add(this.spots.get(8));
-        return thirdRow;
+    public List<String> secondRow() {
+        return spots.get(1);
+    }
+
+    public List<String> thirdRow() {
+        return spots.get(2);
+    }
+
+    public int getBoardSize() {
+        return boardSize;
     }
 
     public void display() {
-        String formattedFirstRow = this.spots.get(0) + " | " + this.spots.get(1) + " | " + this.spots.get(2) + "\n" + this.spots.get(3) + " | " + this.spots.get(4) + " | " + this.spots.get(5) + "\n" + this.spots.get(6) + " | " + this.spots.get(7) + " | " + this.spots.get(8);
+        List<String> firstRow = this.spots.get(0);
+        String formattedFirstRow = firstRow.get(0) + " | " + firstRow.get(1) + " | " + firstRow.get(2) + "\n" + firstRow.get(3) + " | " + this.spots.get(4) + " | " + this.spots.get(5) + "\n" + this.spots.get(6) + " | " + this.spots.get(7) + " | " + this.spots.get(8);
         System.out.print(formattedFirstRow);
     }
+
 }
